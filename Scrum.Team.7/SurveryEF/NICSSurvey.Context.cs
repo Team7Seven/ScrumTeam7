@@ -13,10 +13,10 @@ namespace SurveryEF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NICS_SurveyEntities : DbContext
+    public partial class NICS_SurveyEntities1 : DbContext
     {
-        public NICS_SurveyEntities()
-            : base("name=NICS_SurveyEntities")
+        public NICS_SurveyEntities1()
+            : base("name=NICS_SurveyEntities1")
         {
         }
     
@@ -25,5 +25,11 @@ namespace SurveryEF
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Answer> Answers { get; set; }
+        public virtual DbSet<Page> Pages { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<QuestionType> QuestionTypes { get; set; }
+        public virtual DbSet<Survey> Surveys { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

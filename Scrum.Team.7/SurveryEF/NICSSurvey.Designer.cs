@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Projects\ScrumTeam7\Scrum.Team.7\SurveryEF\NICSSurvery.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Projects\ScrumTeam7\Scrum.Team.7\SurveryEF\NICSSurvey.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

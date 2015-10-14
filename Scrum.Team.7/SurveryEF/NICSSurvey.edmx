@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NICS_SurveyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.Answer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="int" />
+          <Property Name="AnswerText" Type="varchar" MaxLength="200" />
+          <Property Name="NextQuestionID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.Pages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="PagesID" />
+          </Key>
+          <Property Name="PagesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.Question' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurveyID" Type="int" />
+          <Property Name="QuestionText" Type="varchar" MaxLength="250" />
+          <Property Name="PageID" Type="int" />
+          <Property Name="QuestionType" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.QuestionType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="QuestionType">
+          <Key>
+            <PropertyRef Name="QuestionTypeID" />
+          </Key>
+          <Property Name="QuestionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionTypeDesc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.Survey' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Name="SurveyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurveyTitle" Type="varchar" MaxLength="100" />
+          <Property Name="SurveyStartDate" Type="datetime" />
+          <Property Name="SurveyEndDate" Type="datetime" />
+          <Property Name="SurveyCreatorID" Type="int" />
+          <Property Name="SurveyStartSummary" Type="varchar" MaxLength="250" />
+          <Property Name="SurveyEndSummary" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NICS_Survey.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="NICS_SurveyModelStoreContainer">
+          <EntitySet Name="Answer" EntityType="Self.Answer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Answer].[AnswerID] AS [AnswerID], 
+    [Answer].[QuestionID] AS [QuestionID], 
+    [Answer].[AnswerText] AS [AnswerText], 
+    [Answer].[NextQuestionID] AS [NextQuestionID]
+    FROM [dbo].[Answer] AS [Answer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Pages" EntityType="Self.Pages" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pages].[PagesID] AS [PagesID]
+    FROM [dbo].[Pages] AS [Pages]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Question" EntityType="Self.Question" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Question].[QuestionID] AS [QuestionID], 
+    [Question].[SurveyID] AS [SurveyID], 
+    [Question].[QuestionText] AS [QuestionText], 
+    [Question].[PageID] AS [PageID], 
+    [Question].[QuestionType] AS [QuestionType]
+    FROM [dbo].[Question] AS [Question]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QuestionType" EntityType="Self.QuestionType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [QuestionType].[QuestionTypeID] AS [QuestionTypeID], 
+    [QuestionType].[QuestionTypeDesc] AS [QuestionTypeDesc]
+    FROM [dbo].[QuestionType] AS [QuestionType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Survey" EntityType="Self.Survey" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Survey].[SurveyID] AS [SurveyID], 
+    [Survey].[SurveyTitle] AS [SurveyTitle], 
+    [Survey].[SurveyStartDate] AS [SurveyStartDate], 
+    [Survey].[SurveyEndDate] AS [SurveyEndDate], 
+    [Survey].[SurveyCreatorID] AS [SurveyCreatorID], 
+    [Survey].[SurveyStartSummary] AS [SurveyStartSummary], 
+    [Survey].[SurveyEndSummary] AS [SurveyEndSummary]
+    FROM [dbo].[Survey] AS [Survey]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[UserID] AS [UserID], 
+    [User].[UserName] AS [UserName]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NICS_SurveyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" />
+          <Property Name="AnswerText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NextQuestionID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="PagesID" />
+          </Key>
+          <Property Name="PagesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurveyID" Type="Int32" />
+          <Property Name="QuestionText" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PageID" Type="Int32" />
+          <Property Name="QuestionType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QuestionType">
+          <Key>
+            <PropertyRef Name="QuestionTypeID" />
+          </Key>
+          <Property Name="QuestionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionTypeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Name="SurveyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurveyTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SurveyStartDate" Type="DateTime" Precision="3" />
+          <Property Name="SurveyEndDate" Type="DateTime" Precision="3" />
+          <Property Name="SurveyCreatorID" Type="Int32" />
+          <Property Name="SurveyStartSummary" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SurveyEndSummary" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NICS_SurveyEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answers" EntityType="Self.Answer" />
+          <EntitySet Name="Pages" EntityType="Self.Page" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="QuestionTypes" EntityType="Self.QuestionType" />
+          <EntitySet Name="Surveys" EntityType="Self.Survey" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NICS_SurveyModelStoreContainer" CdmEntityContainer="NICS_SurveyEntities1">
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.Answer">
+              <MappingFragment StoreEntitySet="Answer">
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="NextQuestionID" ColumnName="NextQuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="PagesID" ColumnName="PagesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionTypes">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.QuestionType">
+              <MappingFragment StoreEntitySet="QuestionType">
+                <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
+                <ScalarProperty Name="QuestionTypeDesc" ColumnName="QuestionTypeDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surveys">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.Survey">
+              <MappingFragment StoreEntitySet="Survey">
+                <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+                <ScalarProperty Name="SurveyTitle" ColumnName="SurveyTitle" />
+                <ScalarProperty Name="SurveyStartDate" ColumnName="SurveyStartDate" />
+                <ScalarProperty Name="SurveyEndDate" ColumnName="SurveyEndDate" />
+                <ScalarProperty Name="SurveyCreatorID" ColumnName="SurveyCreatorID" />
+                <ScalarProperty Name="SurveyStartSummary" ColumnName="SurveyStartSummary" />
+                <ScalarProperty Name="SurveyEndSummary" ColumnName="SurveyEndSummary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="NICS_SurveyModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
