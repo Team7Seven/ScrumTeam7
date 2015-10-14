@@ -14,7 +14,7 @@ namespace DbUpSurvey
         {
             var connectionString =
                 args.FirstOrDefault()
-                ?? "Server=(local)\\SqlExpress; Database=MyApp; Trusted_connection=true";
+                ?? "Server=(local)\\SqlExpress; Database=NICS_App; Trusted_connection=true";
 
             var upgrader =
                 DeployChanges.To
