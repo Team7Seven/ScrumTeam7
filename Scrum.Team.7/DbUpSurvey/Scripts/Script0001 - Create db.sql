@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [ NICS_Survey]    Script Date: 14/10/2015 15:21:49 ******/
+/****** Object:  Database [ NICS_Survey]    Script Date: 14/10/2015 15:42:39 ******/
 CREATE DATABASE [ NICS_Survey]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -75,7 +75,12 @@ ALTER DATABASE [ NICS_Survey] SET DELAYED_DURABILITY = DISABLED
 GO
 USE [ NICS_Survey]
 GO
-/****** Object:  Table [dbo].[Answer]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  User [NICSSurvey_User]    Script Date: 14/10/2015 15:42:39 ******/
+CREATE USER [NICSSurvey_User] FOR LOGIN [NICSSurvey_Login] WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NICSSurvey_User]
+GO
+/****** Object:  Table [dbo].[Answer]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +97,7 @@ CREATE TABLE [dbo].[Answer](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Pages]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  Table [dbo].[Pages]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -102,7 +107,7 @@ CREATE TABLE [dbo].[Pages](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Question]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  Table [dbo].[Question]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +125,7 @@ CREATE TABLE [dbo].[Question](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[QuestionType]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  Table [dbo].[QuestionType]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -135,7 +140,7 @@ CREATE TABLE [dbo].[QuestionType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Survey]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  Table [dbo].[Survey]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -155,7 +160,7 @@ CREATE TABLE [dbo].[Survey](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  Table [dbo].[User]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -170,7 +175,7 @@ CREATE TABLE [dbo].[User](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  StoredProcedure [dbo].[usp_SurveyInsert]    Script Date: 14/10/2015 15:21:50 ******/
+/****** Object:  StoredProcedure [dbo].[usp_SurveyInsert]    Script Date: 14/10/2015 15:42:40 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
