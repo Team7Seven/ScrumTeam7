@@ -53,19 +53,16 @@
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="NICSSurvey.Context.cs" />
-    <Compile Include="NICSSurvey.cs" />
-    <Compile Include="NICSSurvey.Designer.cs">
-      <DependentUpon>NICSSurvey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NICSSurvey2.cs">
+    <Compile Include="NICSSurvey.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NICSSurvey.tt</DependentUpon>
     </Compile>
-    <Compile Include="NICSSurvey2.Designer.cs">
+    <Compile Include="NICSSurvey.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NICSSurvey.edmx</DependentUpon>
+      <DependentUpon>NICSSurvey.cs</DependentUpon>
     </Compile>
     <Compile Include="Page.cs">
       <DependentUpon>NICSSurvey.tt</DependentUpon>
@@ -85,7 +82,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="NICSSurvey.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NICSSurvey2.Designer.cs</LastGenOutput>
