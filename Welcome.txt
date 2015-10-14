@@ -1,3 +1,5 @@
 Readme.
 
 Welcome to ScrumTeam7.
+
+I think we should rename it to HodgeTeam1
