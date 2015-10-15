@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -48,49 +48,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="NICSSurvery.Context.cs">
+    <Compile Include="NICSSurvey.Context2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NICSSurvery.Context.tt</DependentUpon>
+      <DependentUpon>NICSSurvey.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NICSSurvery.cs">
+    <Compile Include="NICSSurvey.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NICSSurvery.tt</DependentUpon>
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
     </Compile>
-    <Compile Include="NICSSurvery.Designer.cs">
+    <Compile Include="NICSSurvey.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NICSSurvery.edmx</DependentUpon>
+      <DependentUpon>NICSSurvey.edmx</DependentUpon>
+      <DependentUpon>NICSSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NICSSurvey2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NICSSurvey2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NICSSurvey.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Page.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionType.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Survey.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="NICSSurvery.edmx">
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="NICSSurvey.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NICSSurvery.Designer.cs</LastGenOutput>
+      <LastGenOutput>NICSSurvey2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="NICSSurvery.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NICSSurvery.edmx</DependentUpon>
-      <LastGenOutput>NICSSurvery.Context.cs</LastGenOutput>
-    </None>
-    <None Include="NICSSurvery.edmx.diagram">
-      <DependentUpon>NICSSurvery.edmx</DependentUpon>
-    </None>
-    <None Include="NICSSurvery.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NICSSurvery.edmx</DependentUpon>
-      <LastGenOutput>NICSSurvery.cs</LastGenOutput>
+    <None Include="NICSSurvey.edmx.diagram">
+      <DependentUpon>NICSSurvey.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NICSSurvey.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NICSSurvey.Context2.cs</LastGenOutput>
+    </Content>
+    <Content Include="NICSSurvey.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NICSSurvey2.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

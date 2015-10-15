@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NICS_SurveyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NICS_SurveyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'NICS_Survey.dbo.Answer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Answer">
@@ -44,6 +44,7 @@ warning 6002: The table/view 'NICS_Survey.dbo.QuestionType' does not have a prim
           </Key>
           <Property Name="QuestionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionTypeDesc" Type="varchar" MaxLength="50" />
+          <Property Name="QuestionCode" Type="nchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'NICS_Survey.dbo.Survey' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -94,7 +95,8 @@ warning 6002: The table/view 'NICS_Survey.dbo.User' does not have a primary key 
           <EntitySet Name="QuestionType" EntityType="Self.QuestionType" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [QuestionType].[QuestionTypeID] AS [QuestionTypeID], 
-    [QuestionType].[QuestionTypeDesc] AS [QuestionTypeDesc]
+    [QuestionType].[QuestionTypeDesc] AS [QuestionTypeDesc], 
+    [QuestionType].[QuestionCode] AS [QuestionCode]
     FROM [dbo].[QuestionType] AS [QuestionType]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Survey" EntityType="Self.Survey" store:Type="Tables" store:Schema="dbo">
@@ -115,8 +117,7 @@ warning 6002: The table/view 'NICS_Survey.dbo.User' does not have a primary key 
     FROM [dbo].[User] AS [User]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NICS_SurveyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -151,6 +152,7 @@ warning 6002: The table/view 'NICS_Survey.dbo.User' does not have a primary key 
           </Key>
           <Property Name="QuestionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionTypeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Survey">
           <Key>
@@ -216,6 +218,7 @@ warning 6002: The table/view 'NICS_Survey.dbo.User' does not have a primary key 
           <EntitySetMapping Name="QuestionTypes">
             <EntityTypeMapping TypeName="NICS_SurveyModel.QuestionType">
               <MappingFragment StoreEntitySet="QuestionType">
+                <ScalarProperty Name="QuestionCode" ColumnName="QuestionCode" />
                 <ScalarProperty Name="QuestionTypeID" ColumnName="QuestionTypeID" />
                 <ScalarProperty Name="QuestionTypeDesc" ColumnName="QuestionTypeDesc" />
               </MappingFragment>
