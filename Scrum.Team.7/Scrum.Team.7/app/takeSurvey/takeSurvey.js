@@ -14,8 +14,23 @@
 
         vm.repo = takeSurveySrv.getQuestions();
 
-        vm.questionSelected = function(answerId, value){
-            log('Changed: ' + answerId);
+        var responses = [];
+
+        vm.questionSelected = function(answerId, questionId){
+            log('Changed: ' + answerId + ':' + questionId || '');
+            //check if response exists, if it does, remove it
+            var response = { AnswerID: answerId, QuestionID: questionId};
+            
+            var isReplaced = false;
+            //push the response to the array; if question has already been answered, overwrite it
+            for(var i=0, len=responses.length; i<len; i++){
+                if(responses[i].QuestionID == questionId){
+                    responses[i] = response;
+                    isReplaced = true;
+                    break;
+                }
+            }
+            isReplaced || responses.push(response);
         }
 
         //log(vm.questions);

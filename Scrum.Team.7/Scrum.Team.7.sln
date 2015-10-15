@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scrum.Team.7", "Scrum.Team.7\Scrum.Team.7.csproj", "{4C6BD236-2B6A-477C-B5F5-26A4E35FB74D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbUpSurvey", "DbUpSurvey\DbUpSurvey.csproj", "{41F1BB6E-A5FA-443C-9526-D4A4261641F2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scrum.Team._7.WebApi", "Scrum.Team.7.WebApi\Scrum.Team._7.WebApi.csproj", "{5B10D048-5532-4462-8259-4378E4D1686E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveryEF", "SurveryEF\SurveryEF.csproj", "{8D51FBDD-1E49-493C-84C9-13C98BA3D331}"
 EndProject
@@ -25,10 +23,6 @@ Global
 		{41F1BB6E-A5FA-443C-9526-D4A4261641F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41F1BB6E-A5FA-443C-9526-D4A4261641F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41F1BB6E-A5FA-443C-9526-D4A4261641F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B10D048-5532-4462-8259-4378E4D1686E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B10D048-5532-4462-8259-4378E4D1686E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B10D048-5532-4462-8259-4378E4D1686E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B10D048-5532-4462-8259-4378E4D1686E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D51FBDD-1E49-493C-84C9-13C98BA3D331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D51FBDD-1E49-493C-84C9-13C98BA3D331}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D51FBDD-1E49-493C-84C9-13C98BA3D331}.Release|Any CPU.ActiveCfg = Release|Any CPU

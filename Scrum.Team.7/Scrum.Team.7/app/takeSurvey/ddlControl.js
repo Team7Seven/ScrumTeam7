@@ -24,7 +24,7 @@
             link: function(scope, element, attrs) {
                 var attrModel = $parse(attrs.ddlControl);
                 var repo = attrModel(scope.$parent);
-                scope.bound = { answerId: null };
+                scope.bound = { answerId :null }
                 var answers = [];
                 for(var i=0, len=repo.answers.length; i<len; i++){
                     var answer = repo.answers[i];
