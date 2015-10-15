@@ -30,13 +30,53 @@
                     }
                 }
             }, {
-                url: '/admin',
+                url: '/createsurvey',
                 config: {
-                    title: 'admin',
-                    templateUrl: 'app/admin/admin.html',
+                    title: 'createsurvey',
+                    templateUrl: 'app/createsurvey/createsurvey.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: '<i class="fa fa-lock"></i> Create Survey'
+                    }
+                }
+            }, {
+                url: '/questionform',
+                config: {
+                    title: 'questionform',
+                    templateUrl: 'app/questionform/questionform.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Question Form'
+                    }
+                }
+            }, {
+                url: '/invitation',
+                config: {
+                    title: 'invitations',
+                    templateUrl: 'app/invitation/invitation.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Invitations'
+                    }
+                }
+            }, {
+                url: '/preview',
+                config: {
+                    title: 'previews',
+                    templateUrl: 'app/preview/preview.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Preview Survey'
+                    }
+                }
+            }, {
+                url: '/authorise',
+                config: {
+                    title: 'authorise',
+                    templateUrl: 'app/authorise/authorise.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Authorise'
                     }
                 }
             }

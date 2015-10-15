@@ -1,0 +1,18 @@
+﻿<section class="mainbar" data-ng-controller="createsurvey as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <h2>Invitations</h2>
+            </div>
+            <form ng-submit="vm.surveyAdd()">
+                <div class="row">
+                    <p>Survey Description</p>
+                    <textarea ng-model="vm.surveyInvitations" rows="10" cols="100" placeholder="Cut and paste a comma seperated list of email addresses."></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Save Invitations">
+                </div>
+            </form>
+        </div>
+    </section>
+</section>

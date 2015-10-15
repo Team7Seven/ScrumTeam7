@@ -1,0 +1,59 @@
+﻿<section id="createsurvey-view" class="mainbar" data-ng-controller="createsurvey as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <h2>Enter details for the new survey</h2>
+            </div>
+            <form ng-submit="vm.surveyAdd()">
+
+                <div class="row">
+                    <p>Survey Title</p>
+                    <input type="text" ng-model="vm.surveyName" size="100" placeholder="Give the survey a title.">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="input-group">
+                            <p>Start Date for Survey</p>
+                            <input type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="vm.surveyStartDate" is-open="status.opened" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.open($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="input-group">
+                            <p>Closing Date for Survey</p>
+                            <input type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="vm.surveyEndDate" is-open="status.opened" min-date="vm.minDate" max-date="vm.maxDate" datepicker-options="vm.dateOptions" date-disabled="vm.disabled(date, mode)" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.open($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <p>Survey Description</p>
+                    <textarea ng-model="vm.surveyDescription" rows="5" cols="100" placeholder="Describe the purpose of the survey."></textarea>
+                </div>
+
+
+                <div class="row">
+                    <p>Closing Message</p>
+                    <textarea ng-model="vm.surveyCompletionMessage" rows="5" cols="100" placeholder="Enter a message for the survey complete page."></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Add New Survey">
+                </div>
+            </form>
+
+            <div ng-repeat="x in vm.surveyDetails">
+                <input type="checkbox" ng-model="x.done"> <span ng-bind="x.surveyName"></span>
+            </div>
+        </div>
+    </section>
+</section>

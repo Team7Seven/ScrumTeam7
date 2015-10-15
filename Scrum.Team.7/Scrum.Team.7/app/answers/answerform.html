@@ -1,0 +1,39 @@
+﻿<section id="answer-view" class="mainbar" data-ng-controller="answers as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+
+                <h2>Add questions to your new survey</h2>
+
+                <form ng-submit="vm.questionAdd()">
+                    <div class="row">
+                        <p>Question Text</p>
+                        <input type="text" ng-model="vm.questionInput" size="100" placeholder="Add New Question.">
+                    </div>
+
+                    <div class="row">
+                        <p>Question Type</p>  
+                        <div class="col-md-6">
+                            <select class="form-control" ng-model="vm.questionType" ng-options="f for f in vm.questionFormats">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row"> 
+                        <input type="submit" value="Add New Question">
+                    </div>
+                </form>
+
+                <br>
+
+                <div ng-repeat="x in vm.questionList">
+                    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.questionText"></span>
+                </div>
+
+                <p><button ng-click="vm.remove()">Remove marked question</button></p>
+
+            </div>
+        </div>
+    </section>
+</section>
