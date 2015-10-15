@@ -1,0 +1,9 @@
+﻿<div>
+    <span ng-repeat="answer in radioAnswers">
+        <label for="answer{{answer.AnswerID}}">
+            <input type="radio" name="question{{questionId}}" ng-model="bound.answerValue" 
+            ng-change="onSelect(answer.AnswerID)" id="answer{{answer.AnswerID}}" value="{{answer.AnswerID}}" />
+            {{answer.AnswerText}}
+        </label>
+    </span>     
+</div>

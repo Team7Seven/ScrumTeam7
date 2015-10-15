@@ -75,6 +75,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\takeSurvey\ddlControl.js" />
+    <Content Include="app\takeSurvey\ddlTemplate.html" />
+    <Content Include="app\takeSurvey\freetextTemplate.html" />
+    <Content Include="app\takeSurvey\freetextControl.js" />
+    <Content Include="app\takeSurvey\radioControl.js" />
+    <Content Include="app\takeSurvey\radioTemplate.html" />
+    <Content Include="app\takeSurvey\takeSurveySrv.js" />
+    <Content Include="app\takeSurvey\takeSurvey.html" />
+    <Content Include="app\takeSurvey\takeSurvey.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff" />

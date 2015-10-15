@@ -1,0 +1,8 @@
+﻿<div>
+    <select name="question{{questionId}}" id="answer{{answer.AnswerID}}" ng-model="selectedAnswer"
+            ng-init="defaultOption = '-- select --'" ng-value="answer.AnswerID"
+            ng-options="answer.AnswerID as answer.AnswerText for answer in answers" ng-change="onSelect(answer.AnswerID)">
+        <option value="">{{ defaultOption }}</option>
+    </select>
+</div>
+
