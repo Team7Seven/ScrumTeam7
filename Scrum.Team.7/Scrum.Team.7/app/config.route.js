@@ -50,6 +50,16 @@
                     }
                 }
             }, {
+                url: '/answers',
+                config: {
+                    title: 'answers',
+                    templateUrl: 'app/answers/answerform.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Answer Form'
+                    }
+                }
+            }, {
                 url: '/invitation',
                 config: {
                     title: 'invitations',

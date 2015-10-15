@@ -3,35 +3,27 @@
         <div class="container">
             <div class="row">
 
-                <h2>Add questions to your new survey</h2>
+                <h2>Build the answer framework for your questions</h2>
 
-                <form ng-submit="vm.questionAdd()">
+                <form ng-submit="vm.answerAdd()">
                     <div class="row">
-                        <p>Question Text</p>
-                        <input type="text" ng-model="vm.questionInput" size="100" placeholder="Add New Question.">
+                        <p>Answer Text</p>
+                        <input type="text" ng-model="vm.answerText" size="100" placeholder="Add New Answer.">
                     </div>
 
-                    <div class="row">
-                        <p>Question Type</p>  
-                        <div class="col-md-6">
-                            <select class="form-control" ng-model="vm.questionType" ng-options="f for f in vm.questionFormats">
-                                <option></option>
-                            </select>
-                        </div>
-                    </div>
                     <br>
                     <div class="row"> 
-                        <input type="submit" value="Add New Question">
+                        <input type="submit" value="Add Your Answer">
                     </div>
                 </form>
 
                 <br>
 
-                <div ng-repeat="x in vm.questionList">
-                    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.questionText"></span>
+                <div ng-repeat="x in vm.answerList">
+                    <input type="checkbox" ng-model="x.done"> <span ng-bind="x.answerText"></span>
                 </div>
 
-                <p><button ng-click="vm.remove()">Remove marked question</button></p>
+                <p><button ng-click="vm.remove()">Remove marked answer</button></p>
 
             </div>
         </div>

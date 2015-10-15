@@ -9,7 +9,7 @@
 
         var vm = this;
         
-        vm.answersList = []; 
+        vm.answerList = []; 
         vm.answersFormats = ['Drop Down List','Radio Button','Free Text Box'];
 
         vm.news = {
@@ -17,7 +17,7 @@
             description: 'Build your survey by adding answers.'
         };
 
-        vm.title = 'Questions';
+        vm.title = 'Answers';
 
         activate();
 
@@ -26,10 +26,9 @@
                 .then(function() { log('Activated Answers View'); });
         }
 
-        vm.answersAdd = function() {
-            vm.answersList.push({answersText:vm.answersInput, answersType:vm.answersType, done:false});
-            vm.answersInput = "";
-            vm.answersType = "";
+        vm.answerAdd = function() {
+            vm.answerList.push({answerText:vm.answerText, done:false});
+            vm.answerText = "";
         };
 
         vm.remove = function() {
