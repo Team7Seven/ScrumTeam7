@@ -8,12 +8,12 @@ namespace Scrum.Team._7.WebApi.Services
 {
     public class QuestionRepository
     {
-        public List<SurveryEF.Answer> GetAllAnswers()
+        public List<SurveryEF.Question> GetAllQuestions()
         {
             using (var dbContext = new NICS_SurveyEntities1())
             {
-                var answers = dbContext.Answers;
-                List<SurveryEF.Answer> s = new List<SurveryEF.Answer>(answers);
+                var questions = dbContext.Questions;
+                List<SurveryEF.Question> s = new List<SurveryEF.Question>(questions);
                 return s;
             }
         }
