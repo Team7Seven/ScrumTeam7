@@ -16,9 +16,9 @@ namespace Scrum.Team._7.WebApi.Controllers
         public SurveyController()
         {
             this._surveyRepository = new SurveyRepository();
-        } 
+        }
 
-        public Survey[] Get()
+        public List<SurveryEF.Survey> Get()
         {
             return _surveyRepository.GetAllSurveys();
         }

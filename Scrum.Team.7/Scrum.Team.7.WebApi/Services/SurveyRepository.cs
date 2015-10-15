@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Scrum.Team._7.WebApi.Models;
+using SurveryEF;
+using Survey = Scrum.Team._7.WebApi.Models.Survey;
 
 namespace Scrum.Team._7.WebApi.Services
 {
@@ -35,24 +36,27 @@ namespace Scrum.Team._7.WebApi.Services
             }
         }
 
-        public Survey[] GetAllSurveys()
+        public List<SurveryEF.Survey> GetAllSurveys()
         {
-            //TODO - This will hook up to the Entity Framework data access layer to return data from the db instead of a hard coded
-            var ctx = HttpContext.Current;
-
-            if (ctx != null)
+            using (var dbContext = new NICS_SurveyEntities1())
             {
-                return (Survey[])ctx.Cache[CacheKey];
+                var surveys = dbContext.Surveys;
+                List<SurveryEF.Survey> s = new List<SurveryEF.Survey>(surveys);
+                return s;
             }
+        }
 
-            return new Survey[]
+        public SurveryEF.Survey GetSurveyById(int surveyId)
+        {
+            using (var dbContext = new NICS_SurveyEntities1())
             {
-                new Survey
-                {
-                    Id = 0,
-                    Name = "Placeholder"
-                }
-            };
+
+                var query = from p in dbContext.Surveys
+                            where p.SurveyID == surveyId
+                            select p;
+
+                return query.SingleOrDefault();
+            }
         }
     }
 }

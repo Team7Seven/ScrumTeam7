@@ -16,5 +16,6 @@ namespace SurveryEF
     {
         public int QuestionTypeID { get; set; }
         public string QuestionTypeDesc { get; set; }
+        public string QuestionCode { get; set; }
     }
 }

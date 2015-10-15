@@ -52,7 +52,11 @@
       <DependentUpon>NICSSurvey.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="NICSSurvey.Context.cs" />
+    <Compile Include="NICSSurvey.Context2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NICSSurvey.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="NICSSurvey.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,6 +67,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NICSSurvey.edmx</DependentUpon>
       <DependentUpon>NICSSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NICSSurvey2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NICSSurvey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NICSSurvey2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NICSSurvey.edmx</DependentUpon>
     </Compile>
     <Compile Include="Page.cs">
       <DependentUpon>NICSSurvey.tt</DependentUpon>
