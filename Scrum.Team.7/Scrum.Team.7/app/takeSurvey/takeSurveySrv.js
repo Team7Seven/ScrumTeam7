@@ -6,8 +6,9 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn();
         var surveyNo = 0;
-        var questions [];
-        var answers [];
+        var questions = [];
+        var answers = [];
+        var responses = [];
         var mockQuestions = [{   QuestionID: 1, 
                             QuestionText: 'Rate how you feel about this statement: "Team 7 is the greatest"', 
                             QuestionType: "radio"},
@@ -40,8 +41,19 @@
             setSurveyNo: function(number) {
                 surveyNo = number;
             },
-            selectAnswer: function(questionId, value){
-                
+            questionSelected: function(answerId, questionId){
+                var response = { AnswerID: answerId, QuestionID: questionId};
+            
+                var isReplaced = false;
+                //push the response to the array; if question has already been answered, overwrite it
+                for(var i=0, len=responses.length; i<len; i++){
+                    if(responses[i].QuestionID == questionId){
+                        responses[i] = response;
+                        isReplaced = true;
+                        break;
+                    }
+                }
+                isReplaced || responses.push(response);
             }
         };
         return publicObject;
