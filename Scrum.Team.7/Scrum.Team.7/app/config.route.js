@@ -79,6 +79,16 @@
                         content: '<i class="fa fa-lock"></i> Authorise'
                     }
                 }
+            }, {
+                url: '/takeSurvey',
+                config: {
+                    title: 'takeSurvey',
+                    templateUrl: 'app/takeSurvey/takeSurvey.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-dashboard"></i> Take Survey'
+                    }
+                }
             }
         ];
     }

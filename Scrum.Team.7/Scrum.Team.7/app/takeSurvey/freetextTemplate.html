@@ -1,0 +1,9 @@
+﻿<div>
+    <div ng-repeat="answer in answers">
+        <label for="answer{{answer.AnswerID}}">
+            {{answer.AnswerText}}
+            <br />
+            <textarea name="question{{questionId}}" id="answer{{answer.AnswerID}}" />
+        </label>
+    </div>
+</div>
