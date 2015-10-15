@@ -17,7 +17,23 @@
                             QuestionType: "ddl"},
                         {   QuestionID: 3, 
                             QuestionText: 'Tell us what you thought of this great survey', 
-                            QuestionType: "freetext"}];
+                            QuestionType: "freetext"},
+                        {   QuestionID: 4, 
+                            QuestionText: 'How much do you like hackathons?',
+                            QuestionType: "radio"},
+                        {   QuestionID: 5, 
+                            QuestionText: 'Best hackathon team?',
+                            QuestionType: "ddl"},
+                        {   QuestionID: 6, 
+                            QuestionText: 'What time did you go to sleep at last night?',
+                            QuestionType: "radio"},
+                        {   QuestionID: 7, 
+                            QuestionText: 'Computer says?',
+                            QuestionType: "radio"},
+                        {   QuestionID: 8, 
+                            QuestionText: 'Favourite season?',
+                            QuestionType: "ddl"}
+                            ];
         
         var mockAnswers = [ { AnswerID: 1, QuestionID: 1, AnswerText: "Strongly Disagree" },
                             { AnswerID: 2, QuestionID: 1, AnswerText: "Disagree" },
@@ -31,7 +47,30 @@
                             { AnswerID: 9, QuestionID: 2, AnswerText: "Eyeball" },
 
                             { AnswerID: 10, QuestionID: 3, AnswerText: "Lie if you have to:" },
-                            { AnswerID: 11, QuestionID: 3, AnswerText: "But seriously:" }]
+                            { AnswerID: 11, QuestionID: 3, AnswerText: "But seriously:" },
+                            
+                            { AnswerID: 12, QuestionID: 4, AnswerText: "Loads" },
+                            { AnswerID: 13, QuestionID: 4, AnswerText: "Just a lot" },
+
+                            { AnswerID: 14, QuestionID: 5, AnswerText: "Pink" },
+                            { AnswerID: 15, QuestionID: 5, AnswerText: "Green" },
+                            { AnswerID: 16, QuestionID: 5, AnswerText: "WHITE!!" },
+                            { AnswerID: 17, QuestionID: 5, AnswerText: "blue" },
+                            { AnswerID: 18, QuestionID: 5, AnswerText: "orange" },
+
+                            { AnswerID: 19, QuestionID: 6, AnswerText: "7.30pm" },
+                            { AnswerID: 20, QuestionID: 6, AnswerText: "10 pm" },
+                            { AnswerID: 21, QuestionID: 6, AnswerText: "2 am" },
+                            { AnswerID: 22, QuestionID: 6, AnswerText: "4 in the morning" },
+
+                            { AnswerID: 23, QuestionID: 7, AnswerText: "Yes" },
+                            { AnswerID: 24, QuestionID: 7, AnswerText: "No" },
+
+                            { AnswerID: 25, QuestionID: 8, AnswerText: "Spring" },
+                            { AnswerID: 26, QuestionID: 8, AnswerText: "Summer" },
+                            { AnswerID: 27, QuestionID: 8, AnswerText: "Autumn" },
+                            { AnswerID: 28, QuestionID: 8, AnswerText: "Winter" },
+                            ];
 
         var publicObject = {
             getQuestions: function(){

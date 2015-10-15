@@ -7,12 +7,13 @@
                     <div class="widget-content user">
                         <h3>Ta for filling out this survey</h3>
 
-                        <div ng-repeat="question in survey.repo.questions">
-                            <div>{{question.QuestionText}}</div>
+                        <div ng-repeat="question in survey.repo.questions" style="margin-bottom: 30px;">
+                            <div style="font-size: 120%">{{question.QuestionText}}</div>
                             <div ng-if="question.QuestionType=='radio'" radio-control="survey.repo" question-id="question.QuestionID" on-select="survey.questionSelected"></div>
                             <div ng-if="question.QuestionType=='ddl'" ddl-control="survey.repo" question-id="question.QuestionID" on-select="survey.questionSelected"></div>
                             <div ng-if="question.QuestionType=='freetext'" freetext-control="survey.repo" question-id="question.QuestionID" on-select="survey.questionSelected"></div>                                      
                         </div>    
+                        <div><button>Submit</button></div>
                     </div>
                     <div class="widget-foot">
                         <div class="clearfix"></div>
