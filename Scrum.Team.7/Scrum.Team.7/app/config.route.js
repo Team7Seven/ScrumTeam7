@@ -46,7 +46,7 @@
                     templateUrl: 'app/takeSurvey/takeSurvey.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Take Survey'
+                        content: '<i class="fa fa-dashboard"></i> Take Survey'
                     }
                 }
             }
