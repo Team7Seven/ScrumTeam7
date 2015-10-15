@@ -58,5 +58,32 @@ namespace Scrum.Team._7.WebApi.Services
                 return query.SingleOrDefault();
             }
         }
+
+        public bool SaveSurvey(string survey)
+        {
+
+            var newSurvey = new SurveryEF.Survey
+            {
+                SurveyID = 23,
+                SurveyCreatorID = 1,
+                SurveyStartDate = System.DateTime.Now,
+                SurveyEndDate = System.DateTime.Now.AddDays(10),
+                SurveyTitle = survey,
+                SurveyStartSummary = "Welcome to Scrum Team 7",
+                SurveyEndSummary = "Thank you for taking Scrum Team 7's awesome survey"
+            };
+
+            //create DBContext object
+            using (var dbContext = new NICS_SurveyEntities1())
+            {
+                //Add Student object into Students DBset
+                dbContext.Surveys.Add(newSurvey);
+
+                // call SaveChanges method to save student into database
+                dbContext.SaveChanges();
+            }
+
+            return true;
+        }
     }
 }

@@ -22,5 +22,12 @@ namespace Scrum.Team._7.WebApi.Controllers
         {
             return _surveyRepository.GetAllSurveys();
         }
+
+        [HttpPost]
+        public bool Post(string stuff)
+        {
+            _surveyRepository.SaveSurvey(stuff);
+            return true;
+        }
     }
 }
