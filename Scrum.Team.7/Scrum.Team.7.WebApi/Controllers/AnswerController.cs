@@ -11,18 +11,22 @@ namespace Scrum.Team._7.WebApi.Controllers
 {
     public class AnswerController : ApiController
     {
-        private AnswerRepository _answerRepository;
+        private readonly AnswerRepository _answerRepository;
 
         public AnswerController()
         {
             this._answerRepository = new AnswerRepository();
         }
 
-        public HttpResponseMessage Post(Answer answer)
+        public HttpResponseMessage Post(List<Answer> answer)
         {
-            this._answerRepository.SaveAnswer(answer);
+            HttpResponseMessage response = null;
 
-            var response = Request.CreateResponse<Answer>(System.Net.HttpStatusCode.Created, answer);
+            foreach (var ans in answer)
+            {
+                _answerRepository.SaveAnswer(ans);
+                response = Request.CreateResponse<Answer>(System.Net.HttpStatusCode.Created, ans);
+            }
 
             return response;
         }

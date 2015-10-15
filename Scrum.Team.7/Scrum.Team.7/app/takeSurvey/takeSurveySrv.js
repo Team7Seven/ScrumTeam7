@@ -6,6 +6,8 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn();
         var surveyNo = 0;
+        var questions [];
+        var answers [];
         var mockQuestions = [{   QuestionID: 1, 
                             QuestionText: 'Rate how you feel about this statement: "Team 7 is the greatest"', 
                             QuestionType: "radio"},
