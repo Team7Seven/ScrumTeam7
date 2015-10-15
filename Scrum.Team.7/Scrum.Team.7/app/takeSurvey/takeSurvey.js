@@ -14,8 +14,12 @@
 
         vm.repo = takeSurveySrv.getQuestions();
 
-        vm.questionSelected = function(answerId, value){
-            log('Changed: ' + answerId);
+        
+
+        vm.questionSelected = function(answerId, questionId){
+            log('Changed: ' + answerId + ':' + questionId || '');
+            //check if response exists, if it does, remove it
+            takeSurveySrv.questionSelected(answerId, questionId);
         }
 
         //log(vm.questions);
